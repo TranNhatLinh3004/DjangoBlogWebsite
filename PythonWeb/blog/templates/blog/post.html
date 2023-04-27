@@ -1,0 +1,17 @@
+{% extends "pages\base.html" %} 
+
+{% block title %} {{post.title}}{% endblock %} 
+
+{%block content %}
+
+<div class="post-img">
+<img src="{{post.image}}" alt="me"  />
+</div>
+
+<h4 class="title-blog">{{post.title}}</h4>
+  <h5 class="subtitle">{{post.date|date:"d-m-Y"}}</h5>
+
+
+    {{post.body|safe|linebreaks}}
+    <p>When it’s released, React 18 will include out-of-the-box improvements (like automatic batching), new APIs (like startTransition), and a new streaming server renderer with built-in support for React.lazy.These features are possible thanks to a new opt-in mechanism we’re adding in React 18. It’s called “concurrent rendering” and it lets React prepare multiple versions of the UI at the same time. This change is mostly behind-the-scenes, but it unlocks new possibilities to improve both real and perceived performance of your app.If you’ve been following our research into the future of React (we don’t expect you to!), you might have heard of something called “concurrent mode” or that it might break your app. In response to this feedback from the community.</p>
+{% endblock %}

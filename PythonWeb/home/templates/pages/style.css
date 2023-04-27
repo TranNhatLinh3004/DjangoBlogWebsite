@@ -1,0 +1,18 @@
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #11111111;
+}
+
+.highlight {
+    background-color: rgb(252, 252, 252);
+}
+
+.nav-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
+}

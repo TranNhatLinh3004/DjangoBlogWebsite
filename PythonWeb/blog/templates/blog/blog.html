@@ -1,0 +1,49 @@
+{% extends "pages\base.html" %}
+ {% block title %} Blog {% endblock %}
+ 
+ {%block content %}
+
+
+    <h3 class="heading-medium">Bài viết mới nhất</h3>
+    <form action="" method="get" class="d-flex" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        name="query"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+ 
+   {% for post in Posts %}
+
+  <div class="blog">
+    <img class="image-blog" src="{{post.image}}" 
+    style="width:300px; height:180px; 
+  border-radius:10px;
+  background-size:cover;
+
+    
+    "
+    />
+<div class="content-blog">
+
+  <h4 class="title-blog">{{post.title}}</h4>
+
+  <h5 class="subtitle">{{post.date|date:"d-m-Y"}}</h5>
+
+  <p>
+    HTTP status codes are vital to creating an API and in this article I will
+    explain all the important HTTP status codes and when to use them.
+  </p>
+
+  <a href="/blog/{{post.id}}" class="btn">Xem thêm &rarr;</a>  
+</div>
+  </div>
+
+  {% comment %}
+</div>
+{% endcomment %}
+ {% endfor %} 
+{% endblock %}

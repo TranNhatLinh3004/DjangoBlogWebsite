@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/bootstrap.min.css'%}"
+      type="text/css"
+    />
+
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #161a1d;
+}
+a {
+    text-decoration: none;
+
+}
+ul{
+  list-style:none;
+}
+.header{
+  background-color: #2c3e50;
+
+  display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:20px 0;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+}
+
+.highlight {
+    color: black;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate{
+  0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+    color:pink;
+    text-shadow:none;
+
+  }
+  18.1%,29.1%,30%,50%,100%{
+    color: lightgreen;
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 60px #03bcf4,
+    0 0 80px #03bcf4,
+
+  }
+
+}
+.heading{
+  color:white;
+}
+
+.heading-medium{
+  margin-bottom:0px;
+  font-size:25px;
+   color:white;
+   text-shadow: 0 2px 5px green;
+
+}
+
+.nav-top .nav-link{
+    color: black;
+    font-size: 20px;
+
+    padding:6px 10px;
+    background-color: lightgreen;
+
+    border-radius: 8px;
+
+
+  
+}
+
+
+.wrapper{
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 0px 10px 0 100px;
+  height: 80%;
+  {% comment %} background-color: yellow; {% endcomment %}
+
+
+
+}
+
+.nav-left{
+      position: relative;
+
+   display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-left:50px;
+    border-right: 1px solid grey;
+   padding-right: 15px;
+  {% comment %} background-color: rgb(207, 251, 207); {% endcomment %}
+
+
+}
+
+.nav-left .nav-link{
+  width:100%;
+padding: 10px 20px  10px 10px;
+color:white;
+font-size:18px;
+
+
+border-bottom: 1px solid rgb(181, 182, 181);
+}
+
+.nav-left .nav-link:last-child{
+
+}
+.wrapper-content{
+  padding-right:50px;
+  margin:10px 100px 0 20px;
+  overflow-y: scroll;
+  
+
+}
+::-webkit-scrollbar {
+  height: 0.2rem;
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: grey;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: lightgreen;
+
+}
+
+.container-blog{
+  background-color:green; 
+}
+
+.blog{
+  position:relative;
+  height:220px;
+  margin: 0 0 20px 0;
+  display:flex;
+}
+.content-blog{
+  margin-left:20px;
+}
+p {
+ color:#cccccc;
+  margin-bottom: 8px;
+
+}
+.title-blog{
+  font-size: 30px;
+  margin-bottom: 2px;
+  color:white;
+}
+.subtitle{
+  color:grey;
+}
+.btn{
+  background-color: lightgreen;
+  color:black;
+margin-top:60px;
+
+padding:5px 10px;
+{% comment %} padding:8px 10px; {% endcomment %}
+
+
+}
+
+input[type="search"] {
+  appearance: auto;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  margin-bottom:15px;
+  height:30px;
+  width:260px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+}
+.wrapper-content span{
+    font-weight: bold;
+
+
+
+
+}
+.wrapper-content p{
+  font-size: 20px;
+  padding:10px 0;
+}
+.container-fluid {
+    min-height: 95%;
+    background-color: lightblue;
+}
+
+#footer {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    padding-left: 150px;
+    background-color: black ;
+    display:flex;
+        align-items: center;
+    justify-content: start;
+    
+}
+#footer a{
+  color:white;
+  margin-right:20px;
+  font-size:20px;
+}
+#footer a:hover{
+  color:lightgreen;
+  
+}
+.home{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+.home img {
+
+  width: 300px;
+  height: 400px;
+  order: 1;
+  cursor: pointer;
+  justify-content: center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: profile_animate 8s ease-in-out infinite 1s;
+}
+
+@keyframes profile_animate {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+.post-img{
+ width:100%;
+ height:250px;
+  margin-bottom: 30px;
+
+}
+.post-img img{
+  width:100%;
+  height:100%;
+  background-size: cover;
+  background-position: center;
+  animation: none;
+},
+.container-b{
+  display:flex;
+  background-color:red; 
+  align-items: center;
+  justify-content: center;
+}
+,
+input{
+  border:none;
+  outline:none;
+  height: 70px;
+}
+
+form{
+  margin-bottom: 20px;
+}
+    </style>
+
+        <link rel="stylesheet" href="style.css">
+
+  </head>
+<body>
+  <div class="header">
+
+          <a href="#" class="logo"><h3 class="highlight">🌐 My <span class="highlight">Blog</span></h3></a>
+          <h1 class="heading">Welcome to My Blog ✍️ </h1>
+          
+          <ul class="nav-top">
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="#">Đăng nhập</a>
+  </li>
+  </ul>
+  </div>
+
+  <div class="wrapper">
+      <nav class="nav-left">
+          <a class="nav-link" href="/">Thông tin cá nhân</a>
+          <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+          <a class="nav-link" href="{% url 'contact' %}">Liên hệ</a>
+      </nav>
+
+      <div class="wrapper-content">
+          {% block content %}
+          {% endblock %}
+      </div>
+  
+  </div>
+
+
+
+
+
+
+
+
+</div>
+
+<footer>
+<div id="footer">
+<a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Google</a>
+</div>
+</footer>
+
+</body>
+
+    
+</html>

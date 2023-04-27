@@ -1,0 +1,15 @@
+ {% comment %}
+<div class="col-sm-2"> {% endcomment %} {% comment %} <img src="{% static 'images/image1.jpg' %}" class="responsive-img" style="max-height:150px" /> {% endcomment %} {% comment %} </div> {% endcomment %} {% comment %}
+<div class="col-sm-10"> {% endcomment %} {% comment %} </div>
+</div> {% endcomment %} {% comment %} <br/>
+<div class="row">
+    <div class="col-sm-2">
+        <div class="bs-sliderbar" style="background-color: green;">
+            <nav class="nav flex-column">
+                <a class="nav-link" href="/">Thông tin cá nhân</a>
+                <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                <a class="nav-link" href="{% url 'contact' %}">Liên hệ</a>
+
+            </nav>
+        </div>
+    </div> {% endcomment %}
